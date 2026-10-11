@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" href="./style.css">>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VolunteerConnect</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+
+    <meta name="theme-color" content="#247a52">
+</head>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="#home" class="logo">
+                🌿 VolunteerConnect
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#preferences">My Preferences</a>
+                <a href="#opportunities-section">Opportunities</a>
+                <a href="#dashboard">Dashboard</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <span class="hero-tag">
+                🌍 Small Actions. Big Impact.
+            </span>
+
+            <h1>
+                Make a Difference<br>
+                in Your Community.
+            </h1>
+
+            <p>
+                Discover meaningful volunteer opportunities that match
+                your interests, skills, and availability.
+                Every hour you give can change a life.
+            </p>
+
+            <a href="#opportunities-section" class="hero-button">
+                Explore Opportunities →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPACT SECTION -->
+
+    <section class="impact-strip">
+
+        <div class="container impact-grid">
+
+            <div>
+                <span>💚</span>
+                <h3>Make an Impact</h3>
+                <p>Support causes you care about.</p>
+            </div>
+
+            <div>
+                <span>🤝</span>
+                <h3>Connect Locally</h3>
+                <p>Find meaningful ways to help.</p>
+            </div>
+
+            <div>
+                <span>⭐</span>
+                <h3>Track Your Progress</h3>
+                <p>Celebrate every hour you volunteer.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PERSONAL PREFERENCES -->
+
+    <section class="section" id="preferences">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">PERSONALIZE YOUR EXPERIENCE</span>
+                <h2>Find What Matters to You</h2>
+                <p>
+                    Tell us about your interests so we can recommend
+                    suitable volunteer opportunities.
+                </p>
+            </div>
+
+            <div class="preferences-box">
+
+                <div class="form-group">
+
+                    <label for="preferred-cause">
+                        Your Preferred Cause
+                    </label>
+
+                    <select id="preferred-cause">
+                        <option value="Environment">🌳 Environment</option>
+                        <option value="Education">📚 Education</option>
+                        <option value="Animal Welfare">🐾 Animal Welfare</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="preferred-skill">
+                        Your Skill
+                    </label>
+
+                    <select id="preferred-skill">
+                        <option value="Teamwork">🤝 Teamwork</option>
+                        <option value="Teaching">📖 Teaching</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="preferred-day">
+                        Your Available Day
+                    </label>
+
+                    <select id="preferred-day">
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+
+                </div>
+
+                <button id="update-preferences" class="primary-button">
+                    Update Recommendations →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VOLUNTEER OPPORTUNITIES -->
+
+    <section class="section opportunities-section"
+             id="opportunities-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">DISCOVER OPPORTUNITIES</span>
+
+                <h2>Find Your Next Opportunity</h2>
+
+                <p>
+                    Explore activities, save your favorites,
+                    and join a cause that matters.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH AND FILTERS -->
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="🔍 Search activities..."
+                    aria-label="Search volunteer activities"
+                >
+
+                <select id="cause-filter" aria-label="Filter by cause">
+
+                    <option value="">All Causes</option>
+                    <option value="Environment">Environment</option>
+                    <option value="Education">Education</option>
+                    <option value="Animal Welfare">Animal Welfare</option>
+
+                </select>
+
+
+                <select id="day-filter" aria-label="Filter by day">
+
+                    <option value="">All Days</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+
+                </select>
+
+
+                <button id="filter-button" class="primary-button">
+                    Search
+                </button>
+
+            </div>
+
+
+            <!-- JAVASCRIPT DISPLAYS ACTIVITY CARDS HERE -->
+
+            <div id="opportunities">
+                Loading opportunities...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VOLUNTEER DASHBOARD -->
+
+    <section class="section dashboard-section" id="dashboard">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">YOUR VOLUNTEERING JOURNEY</span>
+
+                <h2>My Volunteer Dashboard</h2>
+
+                <p>
+                    Keep track of your participation and completed hours.
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">🤝</div>
+
+                    <h3>Activities Joined</h3>
+
+                    <p id="joined-count">0</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">✅</div>
+
+                    <h3>Completed Activities</h3>
+
+                    <p id="completed-count">0</p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">⏱️</div>
+
+                    <h3>Volunteer Hours</h3>
+
+                    <p>
+                        <span id="total-hours">0</span>
+                        <small>hours</small>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="my-activities-box">
+
+                <h3>My Activities</h3>
+
+                <p class="muted">
+                    View and update the activities you have joined.
+                </p>
+
+                <div id="my-activities"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <a href="#home" class="footer-logo">
+                🌿 VolunteerConnect
+            </a>
+
+            <p>
+                Connecting people with causes that matter.
+            </p>
+
+            <p class="copyright">
+                © 2026 VolunteerConnect. Built to make a difference.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- YOUR EXISTING JAVASCRIPT -->
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
